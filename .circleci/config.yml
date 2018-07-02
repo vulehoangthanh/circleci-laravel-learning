@@ -1,7 +1,7 @@
 version: 2
 jobs:
-#  build:
-    #...
+  build:
+    ...
   deploy:
     machine:
       enabled: true
@@ -10,7 +10,7 @@ jobs:
           name: Deploy Over SSH
           command: |
             ssh $SSH_USER@$SSH_HOST
-            cd /var/www/html
+            cd /var/www/html/
             echo "GIT PULL" > index.html
   deploy_production:
     machine:
@@ -29,6 +29,7 @@ workflows:
   version: 2
   build-and-deploy:
     jobs:
+      - build
       - deploy:
           filters:
             branches:
