@@ -1,16 +1,16 @@
-#version: 2
-#jobs:
-#  build:
-#    #...
-#  deploy:
+version: 2
+jobs:
+  build:
+    #...
+  deploy:
 #    machine:
 #      enabled: true
-#    steps:
-#      - run:
-#          name: Deploy Over SSH
-#          command: |
-#            ssh $SSH_USER@$SSH_HOST "<remote deploy command>"
-#
+    steps:
+      - run:
+          name: Deploy Over SSH
+          command: |
+            ssh root@178.128.86.78 "<remote deploy command>"
+
 #workflows:
 #  version: 2
 #  build-and-deploy:
