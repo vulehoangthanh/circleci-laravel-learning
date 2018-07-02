@@ -8,8 +8,7 @@ jobs:
     steps:
       - run:
           name: Deploy Over SSH
-          command: |
-            ssh root@178.128.86.78 "<remote deploy command>"
+          command: ssh $SSH_USER@$SSH_HOST
 
 workflows:
   version: 2
