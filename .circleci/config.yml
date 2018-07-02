@@ -8,13 +8,10 @@ jobs:
     steps:
       - run:
           name: Deploy Over SSH
-          command: ssh $SSH_USER@$SSH_HOST
-      - run:
-          name: GO TO FOLDER
-          command: cd /var/www/html
-      - run:
-          name: GIT PULL
-          command: echo "GIT PULL" > index.html
+          command: |
+            ssh $SSH_USER@$SSH_HOST
+            cd /var/www/html
+            echo "GIT PULL" > index.html
   deploy_production:
     machine:
       enabled: true
